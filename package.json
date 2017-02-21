@@ -18,11 +18,15 @@
   },
   "homepage": "https://github.com/shackspace/api#readme",
   "dependencies": {
+    "co-request": "^1.0.0",
     "coffee-script": "^1.12.4",
     "koa": "^1.2.5",
+    "koa-body": "^1.6.0",
     "koa-cors": "0.0.16",
     "koa-router": "^5.4.0",
     "koa-send": "^3.3.0",
+    "koa-static": "^2.1.0",
+    "log4js": "^1.1.0",
     "request": "^2.79.0"
   },
   "devDependencies": {
