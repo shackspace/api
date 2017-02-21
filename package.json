@@ -1,0 +1,31 @@
+{
+  "name": "shackspace-api",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bin/server.js",
+  "scripts": {
+    "start": "nodemon --watch app --ext \"js,coffee\" bin/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shackspace/api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shackspace/api/issues"
+  },
+  "homepage": "https://github.com/shackspace/api#readme",
+  "dependencies": {
+    "coffee-script": "^1.12.4",
+    "koa": "^1.2.5",
+    "koa-cors": "0.0.16",
+    "koa-router": "^5.4.0",
+    "koa-send": "^3.3.0",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
