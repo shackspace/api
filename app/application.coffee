@@ -18,7 +18,9 @@ module.exports = ->
 		yield send @, 'index.html', root: config.staticFileDirectory
 	
 	getPortalState = ->
-		rawPortalState = yield request(config.portalUrl)
+		rawPortalState = yield request
+			url: config.portalUrl
+			timeout: 5000
 		return JSON.parse(rawPortalState.body)
 
 	router.get '/v1/open', ->
