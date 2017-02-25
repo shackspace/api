@@ -5,6 +5,7 @@
   "main": "bin/server.js",
   "scripts": {
     "start": "nodemon --watch app --ext \"js,coffee\" bin/server.js",
+    "start:production": "node bin/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
