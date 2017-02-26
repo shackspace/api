@@ -1,6 +1,7 @@
 config = require '../config'
 send = require 'koa-send'
 request = require 'co-request'
+cheerio = require 'cheerio'
 log4js = require 'log4js'
 log = log4js.getLogger 'shackspace-api'
 
@@ -67,6 +68,13 @@ module.exports = ->
 		catch error
 			log.error error
 			@status = 503
+			
+	router.get '/v1/feinstaubalarm', ->
+		widget = yield request 'http://www.stuttgart.de/feinstaubalarm/widget/wider'
+		$ = cheerio.load(widget.body)
+		isAlarm = $('body > div').hasClass('alarm-on')
+		@body =
+			feinstaubalarm: isAlarm
 
 	app.use(router.routes()).use(router.allowedMethods())
 

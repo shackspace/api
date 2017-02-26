@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/shackspace/api#readme",
   "dependencies": {
+    "cheerio": "^0.22.0",
     "co-request": "^1.0.0",
     "coffee-script": "^1.12.4",
     "koa": "^1.2.5",
