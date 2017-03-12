@@ -24,11 +24,12 @@ module.exports = ->
 			timeout: 5000
 		return JSON.parse(rawPortalState.body)
 
-	router.get '/v1/open', ->
+	router.get '/v1/space', ->
 		try
 			portalState = yield getPortalState()
 			@body =
-				status: portalState.status
+				doorState:
+					open: portalState.status == 'open'
 		catch error
 			log.error error
 			@status = 503
