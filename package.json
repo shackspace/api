@@ -9,7 +9,7 @@
     "test": "mocha --compilers coffee:coffee-script/register test/*.test.coffee",
     "docs:install": "cd docs && npm install",
     "docs:start": "cd docs && roots watch",
-    "docs:build": "cd docs && roots compile -e production"
+    "docs:build": "cd docs && npm run build"
   },
   "repository": {
     "type": "git",
@@ -38,6 +38,6 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.11.0"
   }
 }

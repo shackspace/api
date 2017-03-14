@@ -1,6 +1,9 @@
 {
   "name": "shackspace-api-docs",
   "description": "no",
+  "scripts": {
+    "build": "roots compile -e production"
+  },
   "dependencies": {
     "autoprefixer-stylus": "0.9.x",
     "axis": "0.6.x",
@@ -10,6 +13,7 @@
     "js-pipeline": "0.2.x",
     "jstransformer-marked": "1.x",
     "marked": "0.3.x",
+    "roots": "^5.1.0",
     "rupture": "0.6.x",
     "stylus": "0.54.x"
   }
