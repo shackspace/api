@@ -6,7 +6,10 @@
   "scripts": {
     "start": "nodemon --watch app --ext \"js,coffee\" bin/server.js",
     "start:production": "node bin/server.js",
-    "test": "mocha --compilers coffee:coffee-script/register test/*.test.coffee"
+    "test": "mocha --compilers coffee:coffee-script/register test/*.test.coffee",
+    "docs:install": "cd docs && npm install",
+    "docs:start": "cd docs && roots watch",
+    "docs:build": "cd docs && roots compile -e production"
   },
   "repository": {
     "type": "git",
@@ -34,7 +37,10 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
+    "jade": "^1.11.0",
     "mocha": "^3.2.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "roots": "^5.1.0",
+    "stylus": "^0.54.5"
   }
 }
