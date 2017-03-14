@@ -2,10 +2,10 @@ config = require '../config'
 send = require 'koa-send'
 request = require 'co-request'
 cheerio = require 'cheerio'
-moment = require 'moment'
-require 'moment/locale/de'
 log4js = require 'log4js'
 log = log4js.getLogger 'shackspace-api'
+
+plenum = require './plenum'
 
 module.exports = ->
 	koa = require 'koa'
@@ -37,20 +37,8 @@ module.exports = ->
 			@status = 503
 			
 	router.get '/v1/plena/next', ->
-		plenumForWeek = (start) ->
-			if start.week() % 2 is 0
-				start.day('Donnerstag')
-			else
-				start.day('Mittwoch')
-		plenumDate = moment().startOf('week')
-		plenumForWeek plenumDate
-		if moment().isAfter(plenumDate, 'day')
-			plenumDate.day('Monday')
-			plenumForWeek plenumDate
-		
-			
 		@body =
-			date: plenumDate.startOf('day').format()
+			date: plenum.next().format()
 	
 	router.get '/v1/spaceapi', ->
 		try
