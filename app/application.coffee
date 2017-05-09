@@ -37,8 +37,14 @@ module.exports = ->
 			@status = 503
 			
 	router.get '/v1/plena/next', ->
-		@body =
-			date: plenum.next().format()
+		nextPlenum = plenum.next()
+		url = config.wikiUrl + "plenum:#{nextPlenum.format('YYYY-MM-DD')}"
+		if(@query.redirect?)
+			@redirect url
+		else
+			@body =
+				date: nextPlenum.format()
+				url: url
 	
 	router.get '/v1/spaceapi', ->
 		try
