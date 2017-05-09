@@ -38,7 +38,7 @@ module.exports = ->
 			
 	router.get '/v1/plena/next', ->
 		nextPlenum = plenum.next()
-		url = config.wikiUrl + "plenum:#{nextPlenum.format('YYYY-MM-DD')}"
+		url = config.wikiUrl + "plenum/#{nextPlenum.format('YYYY-MM-DD')}"
 		if(@query.redirect?)
 			@redirect url
 		else
