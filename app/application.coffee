@@ -36,6 +36,16 @@ module.exports = ->
 			log.error error
 			@status = 503
 			
+	router.get '/v1/online', ->
+		try
+			response = yield request
+				url: config.shacklesUrl
+				timeout: 5000
+			@body = JSON.parse(response.body)
+		catch error
+			log.error error
+			@status = 503
+			
 	router.get '/v1/plena/next', ->
 		nextPlenum = plenum.next()
 		url = config.wikiUrl + "plenum/#{nextPlenum.format('YYYY-MM-DD')}"
