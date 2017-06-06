@@ -3,4 +3,4 @@ module.exports =
 	staticFileDirectory: 'docs/public'
 	portalUrl: 'http://api.shack/v1/portal'
 	shacklesUrl: 'http://api.shack/v1/online'
-	wikiUrl: 'https://wiki.shack.space/'
+	wikiUrl: 'https://wiki.shackspace.de/'
