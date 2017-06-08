@@ -55,7 +55,7 @@ module.exports = ->
 		else
 			@body =
 				date: nextPlenum.format()
-				humanized: nextPlenum.locale('en').from(moment())
+				fromNow: nextPlenum.locale('en').from(moment())
 				url: url
 	
 	router.get '/v1/spaceapi', ->
