@@ -1,6 +1,7 @@
 config = require '../config'
 send = require 'koa-send'
 request = require 'co-request'
+moment = require 'moment'
 cheerio = require 'cheerio'
 log4js = require 'log4js'
 log = log4js.getLogger 'shackspace-api'
@@ -54,6 +55,7 @@ module.exports = ->
 		else
 			@body =
 				date: nextPlenum.format()
+				humanized: nextPlenum.locale('en').from(moment())
 				url: url
 	
 	router.get '/v1/spaceapi', ->
