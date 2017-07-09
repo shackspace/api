@@ -85,7 +85,7 @@ module.exports = ->
 						open: "http://shackspace.de/sopen.gif"
 						closed: "http://shackspace.de/sopen.gif"
 					open: portalState.status == 'open'
-					lastchange: portalState.timestamp
+					lastchange: moment(portalState.timestamp).unix()
 				projects: [
 					"http://shackspace.de/wiki/doku.php?id=projekte"
 					"http://github.com/shackspace"
