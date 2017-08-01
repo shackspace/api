@@ -100,6 +100,16 @@ module.exports = ->
 		isAlarm = $('body > div').hasClass('alarm-on')
 		@body =
 			feinstaubalarm: isAlarm
+			
+	router.get '/v1/stats/portal', ->
+		try
+			response = yield request
+				url: config.portalStatsUrl
+				timeout: 5000
+			@body = JSON.parse(response.body)
+		catch error
+			log.error error
+			@status = 503
 
 	app.use(router.routes()).use(router.allowedMethods())
 
