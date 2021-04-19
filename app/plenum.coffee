@@ -13,5 +13,5 @@ module.exports.next = () ->
 		plenumDate.day(8)
 		plenumForWeek plenumDate
 
-	plenumDate.set('hour', 20)
+	plenumDate.set('hour', 19)
 	return plenumDate
