@@ -1,4 +1,4 @@
-# shackapi-space-docs
+# shackspace-api-docs
 
 Public shackspace api currently hosted at https://api.shackspace.de/
 
